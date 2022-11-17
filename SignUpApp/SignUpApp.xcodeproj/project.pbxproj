@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF032C482926DD14000C4295 /* Managers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF032C472926DD14000C4295 /* Managers.swift */; };
 		AF5E0CF72924EA08008B0DAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5E0CF62924EA08008B0DAC /* AppDelegate.swift */; };
 		AF5E0CF92924EA08008B0DAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5E0CF82924EA08008B0DAC /* SceneDelegate.swift */; };
 		AF5E0CFE2924EA08008B0DAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF5E0CFC2924EA08008B0DAC /* Main.storyboard */; };
@@ -14,9 +15,12 @@
 		AF5E0D032924EA0D008B0DAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF5E0D012924EA0D008B0DAC /* LaunchScreen.storyboard */; };
 		AF5E0D0D2924F679008B0DAC /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF5E0D0C2924F679008B0DAC /* SignIn.storyboard */; };
 		AF5E0D0F29251BAE008B0DAC /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF5E0D0E29251BAE008B0DAC /* SignUp.storyboard */; };
+		AF5E0D112926CF7A008B0DAC /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5E0D102926CF7A008B0DAC /* SignInViewController.swift */; };
+		AF5E0D132926CF8E008B0DAC /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5E0D122926CF8E008B0DAC /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF032C472926DD14000C4295 /* Managers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Managers.swift; sourceTree = "<group>"; };
 		AF5E0CF32924EA08008B0DAC /* SignUpApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SignUpApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF5E0CF62924EA08008B0DAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF5E0CF82924EA08008B0DAC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +30,8 @@
 		AF5E0D042924EA0D008B0DAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF5E0D0C2924F679008B0DAC /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
 		AF5E0D0E29251BAE008B0DAC /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
+		AF5E0D102926CF7A008B0DAC /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		AF5E0D122926CF8E008B0DAC /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +45,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF032C462926DC83000C4295 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				AF032C472926DD14000C4295 /* Managers.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		AF5E0CEA2924EA08008B0DAC = {
 			isa = PBXGroup;
 			children = (
@@ -58,8 +72,10 @@
 		AF5E0CF52924EA08008B0DAC /* SignUpApp */ = {
 			isa = PBXGroup;
 			children = (
+				AF5E0D152926CFD5008B0DAC /* Controllers */,
 				AF5E0D0A2924EA7B008B0DAC /* Delegates */,
 				AF5E0D0B2924F5E5008B0DAC /* Views */,
+				AF032C462926DC83000C4295 /* Managers */,
 				AF5E0CFF2924EA0D008B0DAC /* Assets.xcassets */,
 				AF5E0D042924EA0D008B0DAC /* Info.plist */,
 			);
@@ -84,6 +100,15 @@
 				AF5E0CFC2924EA08008B0DAC /* Main.storyboard */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		AF5E0D152926CFD5008B0DAC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AF5E0D102926CF7A008B0DAC /* SignInViewController.swift */,
+				AF5E0D122926CF8E008B0DAC /* SignUpViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,8 +184,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF032C482926DD14000C4295 /* Managers.swift in Sources */,
 				AF5E0CF72924EA08008B0DAC /* AppDelegate.swift in Sources */,
 				AF5E0CF92924EA08008B0DAC /* SceneDelegate.swift in Sources */,
+				AF5E0D132926CF8E008B0DAC /* SignUpViewController.swift in Sources */,
+				AF5E0D112926CF7A008B0DAC /* SignInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
