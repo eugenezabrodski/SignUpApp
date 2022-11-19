@@ -45,7 +45,7 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        
+        willStartKeyboard()
     }
     
     //MARK: - Methods
@@ -112,6 +112,27 @@ class SignUpViewController: UIViewController {
         }
         continueButton.alpha = 0.3
     }
+    
+    //MARK: - Keyboard
+    
+    private func willStartKeyboard() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc private func keyboardWillShow(notification: Notification) {
+        guard let keyboardSize = (notification.userInfo? [UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {return}
+        let content = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height, right: 0.0)
+        scrollView.contentInset = content
+        scrollView.scrollIndicatorInsets = content
+    }
+    
+    @objc private func keyboardHide() {
+        let content = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
+        scrollView.contentInset = content
+        scrollView.scrollIndicatorInsets = content
+    }
+    
     
     /*
     // MARK: - Navigation
