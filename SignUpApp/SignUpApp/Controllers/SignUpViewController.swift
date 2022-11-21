@@ -83,9 +83,18 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func signInButton() {
+        navigationController?.popToRootViewController(animated: true)
     }
     
     @IBAction func continueButtonAction() {
+    }
+    
+    
+    @IBAction func tapRecognizer(_ sender: Any) {
+        emailTF.resignFirstResponder()
+        passwordTF.resignFirstResponder()
+        nameTF.resignFirstResponder()
+        confirmPasswordTF.resignFirstResponder()
     }
     
     

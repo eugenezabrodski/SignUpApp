@@ -118,7 +118,7 @@
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                                                         <connections>
-                                                                            <action selector="passwordTFAction:" destination="Y6W-OH-hqX" eventType="editingChanged" id="KT2-vv-gNa"/>
+                                                                            <action selector="passwordTFAction:" destination="Y6W-OH-hqX" eventType="editingChanged" id="hYO-0I-l1s"/>
                                                                         </connections>
                                                                     </textField>
                                                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Jx-Ej-MLa">
@@ -205,6 +205,7 @@
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="kh6-my-p5u" secondAttribute="trailing" constant="25" id="5kJ-sS-JZH"/>
                                             <constraint firstAttribute="bottom" secondItem="kh6-my-p5u" secondAttribute="bottom" constant="50" id="HFe-QZ-fSe"/>
@@ -213,6 +214,9 @@
                                             <constraint firstItem="kh6-my-p5u" firstAttribute="top" secondItem="pfO-Go-Kdx" secondAttribute="top" constant="100" id="i31-hu-NKu"/>
                                             <constraint firstItem="SPd-pj-jcI" firstAttribute="top" secondItem="pfO-Go-Kdx" secondAttribute="top" constant="16" id="xqB-UJ-OuR"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="f0p-Xq-euR" appends="YES" id="Etc-fx-jtg"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -253,8 +257,13 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="f0p-Xq-euR">
+                    <connections>
+                        <action selector="tapRecognizer:" destination="Y6W-OH-hqX" id="aJY-1r-0Km"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="297" y="49"/>
+            <point key="canvasLocation" x="62" y="-94"/>
         </scene>
     </scenes>
     <resources>
