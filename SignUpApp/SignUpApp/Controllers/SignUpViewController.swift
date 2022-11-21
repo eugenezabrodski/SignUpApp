@@ -67,7 +67,7 @@ class SignUpViewController: UIViewController {
             passwordStrenght = .veryWeak
         }
         errorPassword.isHidden = passwordStrenght != .veryWeak
-        errorPassword.text = "Your password is uncorrect"
+        errorPassword.text = "Your password is incorrect"
         setupPasswordsIndicator()
     }
     
