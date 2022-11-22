@@ -7,29 +7,29 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController {
+final class SignUpViewController: UIViewController {
 
     // MARK: - IBOutlets
     
-    @IBOutlet weak var emailTF: UITextField!
+    @IBOutlet private weak var emailTF: UITextField!
     
-    @IBOutlet weak var errorEmail: UILabel!
+    @IBOutlet private weak var errorEmail: UILabel!
     
-    @IBOutlet weak var nameTF: UITextField!
+    @IBOutlet private weak var nameTF: UITextField!
     
-    @IBOutlet weak var passwordTF: UITextField!
+    @IBOutlet private weak var passwordTF: UITextField!
     
-    @IBOutlet weak var errorPassword: UILabel!
+    @IBOutlet private weak var errorPassword: UILabel!
     
-    @IBOutlet var strongPasswordIndicator: [UIView]!
+    @IBOutlet private var strongPasswordIndicator: [UIView]!
     
-    @IBOutlet weak var confirmPasswordTF: UITextField!
+    @IBOutlet private weak var confirmPasswordTF: UITextField!
     
-    @IBOutlet weak var errorConfirmPass: UILabel!
+    @IBOutlet private weak var errorConfirmPass: UILabel!
     
-    @IBOutlet weak var continueButton: UIButton!
+    @IBOutlet private weak var continueButton: UIButton!
     
-    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet private weak var scrollView: UIScrollView!
     
     //MARK: - Properties
     
@@ -50,7 +50,7 @@ class SignUpViewController: UIViewController {
     
     //MARK: - Methods
     
-    @IBAction func emailTFAction(_ sender: UITextField) {
+    @IBAction private func emailTFAction(_ sender: UITextField) {
         if let email = sender.text, !email.isEmpty, VerificationService.isValidEmail(email) {
             isValidEmail = true
         } else {
@@ -60,7 +60,7 @@ class SignUpViewController: UIViewController {
         errorEmail.isHidden = isValidEmail
     }
     
-    @IBAction func passwordTFAction(_ sender: UITextField) {
+    @IBAction private func passwordTFAction(_ sender: UITextField) {
         if let password = sender.text, !password.isEmpty {
             passwordStrenght = VerificationService.isValidPassword(pass: password)
         } else {
@@ -71,7 +71,7 @@ class SignUpViewController: UIViewController {
         setupPasswordsIndicator()
     }
     
-    @IBAction func confirmPasswordTFAction(_ sender: UITextField) {
+    @IBAction private func confirmPasswordTFAction(_ sender: UITextField) {
         if let confPassText = sender.text, !confPassText.isEmpty,
            let passText = passwordTF.text, !passText.isEmpty {
             isConfirmPass = VerificationService.isPassConfirm(pass: passText, confirmPass: confPassText)
@@ -82,15 +82,15 @@ class SignUpViewController: UIViewController {
         errorConfirmPass.text = "Repeat your password, please"
     }
     
-    @IBAction func signInButton() {
+    @IBAction private func signInButton() {
         navigationController?.popToRootViewController(animated: true)
     }
     
-    @IBAction func continueButtonAction() {
+    @IBAction private func continueButtonAction() {
     }
     
     
-    @IBAction func tapRecognizer(_ sender: Any) {
+    @IBAction private func tapRecognizer(_ sender: Any) {
         emailTF.resignFirstResponder()
         passwordTF.resignFirstResponder()
         nameTF.resignFirstResponder()
