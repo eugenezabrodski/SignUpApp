@@ -46,6 +46,7 @@ final class SignUpViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         willStartKeyboard()
+        hideKeyboardWhenTappedAround()
     }
     
     //MARK: - Methods
@@ -87,15 +88,13 @@ final class SignUpViewController: UIViewController {
     }
     
     @IBAction private func continueButtonAction() {
+        if let email = emailTF.text,
+           let pass = passwordTF.text {
+            let userModel = UserModel(name: nameTF.text, email: email, pass: pass)
+            performSegue(withIdentifier: "goToSecretCodeVC", sender: userModel)
+        }
     }
     
-    
-    @IBAction private func tapRecognizer(_ sender: Any) {
-        emailTF.resignFirstResponder()
-        passwordTF.resignFirstResponder()
-        nameTF.resignFirstResponder()
-        confirmPasswordTF.resignFirstResponder()
-    }
     
     
     //MARK: - Functions
@@ -143,14 +142,14 @@ final class SignUpViewController: UIViewController {
     }
     
     
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        guard let destVC = segue.destination as? VerificationsViewController,
+              let userModel = sender as? UserModel
+        else { return }
+        destVC.userModel = userModel
     }
-    */
+
 
 }

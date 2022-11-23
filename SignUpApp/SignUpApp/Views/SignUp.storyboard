@@ -214,9 +214,6 @@
                                             <constraint firstItem="kh6-my-p5u" firstAttribute="top" secondItem="pfO-Go-Kdx" secondAttribute="top" constant="100" id="i31-hu-NKu"/>
                                             <constraint firstItem="SPd-pj-jcI" firstAttribute="top" secondItem="pfO-Go-Kdx" secondAttribute="top" constant="16" id="xqB-UJ-OuR"/>
                                         </constraints>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="f0p-Xq-euR" appends="YES" id="Etc-fx-jtg"/>
-                                        </connections>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -254,16 +251,89 @@
                         <outletCollection property="strongPasswordIndicator" destination="Yu3-wl-NXo" collectionClass="NSMutableArray" id="MWq-qU-kib"/>
                         <outletCollection property="strongPasswordIndicator" destination="t99-3m-3KR" collectionClass="NSMutableArray" id="u17-F9-iLI"/>
                         <outletCollection property="strongPasswordIndicator" destination="sYg-0E-iyH" collectionClass="NSMutableArray" id="RI5-MP-iFg"/>
+                        <segue destination="ufN-IC-H96" kind="show" identifier="goToSecretCodeVC" id="9He-5G-Yyu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="f0p-Xq-euR">
-                    <connections>
-                        <action selector="tapRecognizer:" destination="Y6W-OH-hqX" id="aJY-1r-0Km"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="62" y="-94"/>
+        </scene>
+        <!--Verifications View Controller-->
+        <scene sceneID="5JP-RV-glu">
+            <objects>
+                <viewController id="ufN-IC-H96" customClass="VerificationsViewController" customModule="SignUpApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lls-an-J9k">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Qt2-bV-9cB">
+                                <rect key="frame" x="50" y="323.5" width="314" height="239"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter your secret code from your emal" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O8F-z0-I8W">
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="60"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCo-Lo-aOQ">
+                                        <rect key="frame" x="0.0" y="90" width="314" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H5x-er-4tZ">
+                                        <rect key="frame" x="0.0" y="144" width="314" height="31"/>
+                                        <color key="backgroundColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="0.24803465687207885" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="gray" title="Refresh"/>
+                                        <connections>
+                                            <action selector="refreshButtonAction:" destination="ufN-IC-H96" eventType="touchUpInside" id="3tF-Mc-3Cd"/>
+                                        </connections>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="vXM-FN-81E">
+                                        <rect key="frame" x="0.0" y="205" width="314" height="34"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your secret code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LtL-PQ-7jy">
+                                                <rect key="frame" x="0.0" y="0.0" width="314" height="34"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="0.25065911334493884" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="codeTFAction:" destination="ufN-IC-H96" eventType="editingDidEndOnExit" id="lJ0-id-gQF"/>
+                                                </connections>
+                                            </textField>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Secret code incorrect" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ACm-5f-k4J">
+                                                <rect key="frame" x="0.0" y="0.0" width="314" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <color key="textColor" red="1" green="0.22844753640000001" blue="0.24509142419999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="rg6-e7-rID"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Qt2-bV-9cB" firstAttribute="centerY" secondItem="rg6-e7-rID" secondAttribute="centerY" id="3lH-fw-eyg"/>
+                            <constraint firstItem="Qt2-bV-9cB" firstAttribute="leading" secondItem="rg6-e7-rID" secondAttribute="leading" constant="50" id="Y67-uW-JJU"/>
+                            <constraint firstItem="rg6-e7-rID" firstAttribute="trailing" secondItem="Qt2-bV-9cB" secondAttribute="trailing" constant="50" id="fhx-0L-yV1"/>
+                            <constraint firstItem="Qt2-bV-9cB" firstAttribute="centerX" secondItem="rg6-e7-rID" secondAttribute="centerX" id="gcf-kW-dIi"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="I00-r6-YIi"/>
+                    <connections>
+                        <outlet property="codeTF" destination="LtL-PQ-7jy" id="Jbf-Oo-UoG"/>
+                        <outlet property="constraintStackView" destination="3lH-fw-eyg" id="ikg-Dq-Sy7"/>
+                        <outlet property="erorrCode" destination="ACm-5f-k4J" id="EwG-V2-e6r"/>
+                        <outlet property="infoLabel" destination="hCo-Lo-aOQ" id="6ul-MI-9Ce"/>
+                        <outlet property="refreshButton" destination="H5x-er-4tZ" id="IAt-aa-2uz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A1E-KW-ot8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="945" y="-94"/>
         </scene>
     </scenes>
     <resources>

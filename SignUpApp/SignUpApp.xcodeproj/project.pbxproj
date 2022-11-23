@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		AF032C482926DD14000C4295 /* Managers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF032C472926DD14000C4295 /* Managers.swift */; };
+		AF41E2A7292E74FE009F78C4 /* UIVCExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF41E2A6292E74FE009F78C4 /* UIVCExt.swift */; };
+		AF41E2A9292E7DFB009F78C4 /* VerificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF41E2A8292E7DFB009F78C4 /* VerificationsViewController.swift */; };
+		AF41E2AC292E7EB7009F78C4 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF41E2AB292E7EB7009F78C4 /* UserModel.swift */; };
 		AF5E0CF72924EA08008B0DAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5E0CF62924EA08008B0DAC /* AppDelegate.swift */; };
 		AF5E0CF92924EA08008B0DAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5E0CF82924EA08008B0DAC /* SceneDelegate.swift */; };
 		AF5E0CFE2924EA08008B0DAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF5E0CFC2924EA08008B0DAC /* Main.storyboard */; };
@@ -21,6 +24,9 @@
 
 /* Begin PBXFileReference section */
 		AF032C472926DD14000C4295 /* Managers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Managers.swift; sourceTree = "<group>"; };
+		AF41E2A6292E74FE009F78C4 /* UIVCExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIVCExt.swift; sourceTree = "<group>"; };
+		AF41E2A8292E7DFB009F78C4 /* VerificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationsViewController.swift; sourceTree = "<group>"; };
+		AF41E2AB292E7EB7009F78C4 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		AF5E0CF32924EA08008B0DAC /* SignUpApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SignUpApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF5E0CF62924EA08008B0DAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF5E0CF82924EA08008B0DAC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +59,22 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		AF41E2A5292E749A009F78C4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AF41E2A6292E74FE009F78C4 /* UIVCExt.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AF41E2AA292E7E9F009F78C4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AF41E2AB292E7EB7009F78C4 /* UserModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		AF5E0CEA2924EA08008B0DAC = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +94,8 @@
 		AF5E0CF52924EA08008B0DAC /* SignUpApp */ = {
 			isa = PBXGroup;
 			children = (
+				AF41E2AA292E7E9F009F78C4 /* Model */,
+				AF41E2A5292E749A009F78C4 /* Extensions */,
 				AF5E0D152926CFD5008B0DAC /* Controllers */,
 				AF5E0D0A2924EA7B008B0DAC /* Delegates */,
 				AF5E0D0B2924F5E5008B0DAC /* Views */,
@@ -107,6 +131,7 @@
 			children = (
 				AF5E0D102926CF7A008B0DAC /* SignInViewController.swift */,
 				AF5E0D122926CF8E008B0DAC /* SignUpViewController.swift */,
+				AF41E2A8292E7DFB009F78C4 /* VerificationsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -184,8 +209,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF41E2A7292E74FE009F78C4 /* UIVCExt.swift in Sources */,
 				AF032C482926DD14000C4295 /* Managers.swift in Sources */,
+				AF41E2AC292E7EB7009F78C4 /* UserModel.swift in Sources */,
 				AF5E0CF72924EA08008B0DAC /* AppDelegate.swift in Sources */,
+				AF41E2A9292E7DFB009F78C4 /* VerificationsViewController.swift in Sources */,
 				AF5E0CF92924EA08008B0DAC /* SceneDelegate.swift in Sources */,
 				AF5E0D132926CF8E008B0DAC /* SignUpViewController.swift in Sources */,
 				AF5E0D112926CF7A008B0DAC /* SignInViewController.swift in Sources */,
