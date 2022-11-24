@@ -11,6 +11,9 @@
 		AF41E2A7292E74FE009F78C4 /* UIVCExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF41E2A6292E74FE009F78C4 /* UIVCExt.swift */; };
 		AF41E2A9292E7DFB009F78C4 /* VerificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF41E2A8292E7DFB009F78C4 /* VerificationsViewController.swift */; };
 		AF41E2AC292E7EB7009F78C4 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF41E2AB292E7EB7009F78C4 /* UserModel.swift */; };
+		AF41E2AE292FC6D3009F78C4 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF41E2AD292FC6D3009F78C4 /* WelcomeViewController.swift */; };
+		AF41E2B0292FCC25009F78C4 /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF41E2AF292FCC25009F78C4 /* UserDefaultsService.swift */; };
+		AF41E2B2292FCDAC009F78C4 /* UserDefaultsExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF41E2B1292FCDAC009F78C4 /* UserDefaultsExt.swift */; };
 		AF5E0CF72924EA08008B0DAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5E0CF62924EA08008B0DAC /* AppDelegate.swift */; };
 		AF5E0CF92924EA08008B0DAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5E0CF82924EA08008B0DAC /* SceneDelegate.swift */; };
 		AF5E0CFE2924EA08008B0DAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF5E0CFC2924EA08008B0DAC /* Main.storyboard */; };
@@ -27,6 +30,9 @@
 		AF41E2A6292E74FE009F78C4 /* UIVCExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIVCExt.swift; sourceTree = "<group>"; };
 		AF41E2A8292E7DFB009F78C4 /* VerificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationsViewController.swift; sourceTree = "<group>"; };
 		AF41E2AB292E7EB7009F78C4 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		AF41E2AD292FC6D3009F78C4 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		AF41E2AF292FCC25009F78C4 /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
+		AF41E2B1292FCDAC009F78C4 /* UserDefaultsExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExt.swift; sourceTree = "<group>"; };
 		AF5E0CF32924EA08008B0DAC /* SignUpApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SignUpApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF5E0CF62924EA08008B0DAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF5E0CF82924EA08008B0DAC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				AF032C472926DD14000C4295 /* Managers.swift */,
+				AF41E2AF292FCC25009F78C4 /* UserDefaultsService.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -63,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				AF41E2A6292E74FE009F78C4 /* UIVCExt.swift */,
+				AF41E2B1292FCDAC009F78C4 /* UserDefaultsExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -132,6 +140,7 @@
 				AF5E0D102926CF7A008B0DAC /* SignInViewController.swift */,
 				AF5E0D122926CF8E008B0DAC /* SignUpViewController.swift */,
 				AF41E2A8292E7DFB009F78C4 /* VerificationsViewController.swift */,
+				AF41E2AD292FC6D3009F78C4 /* WelcomeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -209,8 +218,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF41E2AE292FC6D3009F78C4 /* WelcomeViewController.swift in Sources */,
 				AF41E2A7292E74FE009F78C4 /* UIVCExt.swift in Sources */,
+				AF41E2B0292FCC25009F78C4 /* UserDefaultsService.swift in Sources */,
 				AF032C482926DD14000C4295 /* Managers.swift in Sources */,
+				AF41E2B2292FCDAC009F78C4 /* UserDefaultsExt.swift in Sources */,
 				AF41E2AC292E7EB7009F78C4 /* UserModel.swift in Sources */,
 				AF5E0CF72924EA08008B0DAC /* AppDelegate.swift in Sources */,
 				AF41E2A9292E7DFB009F78C4 /* VerificationsViewController.swift in Sources */,

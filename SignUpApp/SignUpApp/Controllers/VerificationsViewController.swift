@@ -38,6 +38,7 @@ class VerificationsViewController: UIViewController {
             refreshButton.isEnabled = true
             return
         }
+        performSegue(withIdentifier: "goToWelcomeVC", sender: nil)
     }
     
     @IBAction func refreshButtonAction(_ sender: UIButton) {
@@ -71,14 +72,14 @@ class VerificationsViewController: UIViewController {
         constraintStackView.constant += keyboardSize.height / 2
     }
     
-    /*
+
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        guard let destVC = segue.destination as? WelcomeViewController
+        else { return }
+        destVC.userModel = userModel
     }
-    */
+
 
 }

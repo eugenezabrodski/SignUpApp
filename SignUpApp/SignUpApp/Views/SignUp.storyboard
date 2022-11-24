@@ -281,11 +281,11 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H5x-er-4tZ">
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H5x-er-4tZ">
                                         <rect key="frame" x="0.0" y="144" width="314" height="31"/>
                                         <color key="backgroundColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="0.24803465687207885" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="gray" title="Refresh"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <buttonConfiguration key="configuration" style="gray" image="goforward" catalog="system" title="Refresh"/>
                                         <connections>
                                             <action selector="refreshButtonAction:" destination="ufN-IC-H96" eventType="touchUpInside" id="3tF-Mc-3Cd"/>
                                         </connections>
@@ -297,7 +297,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="314" height="34"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="0.25065911334493884" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="continue"/>
                                                 <connections>
                                                     <action selector="codeTFAction:" destination="ufN-IC-H96" eventType="editingDidEndOnExit" id="lJ0-id-gQF"/>
                                                 </connections>
@@ -329,16 +329,81 @@
                         <outlet property="erorrCode" destination="ACm-5f-k4J" id="EwG-V2-e6r"/>
                         <outlet property="infoLabel" destination="hCo-Lo-aOQ" id="6ul-MI-9Ce"/>
                         <outlet property="refreshButton" destination="H5x-er-4tZ" id="IAt-aa-2uz"/>
+                        <segue destination="E5j-G6-HPe" kind="show" identifier="goToWelcomeVC" id="L5N-MF-cLP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A1E-KW-ot8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="945" y="-94"/>
         </scene>
+        <!--Welcome View Controller-->
+        <scene sceneID="VI6-2I-rX3">
+            <objects>
+                <viewController id="E5j-G6-HPe" customClass="WelcomeViewController" customModule="SignUpApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6US-aZ-Eoi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="caC-99-8mO">
+                                <rect key="frame" x="150" y="511" width="114" height="31"/>
+                                <color key="backgroundColor" red="0.38912876665581536" green="0.7803921568627451" blue="0.41796779556392227" alpha="0.65514727606289624" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" image="paperplane.circle" catalog="system" title="Continue"/>
+                                <connections>
+                                    <action selector="continueButtonAction:" destination="E5j-G6-HPe" eventType="touchUpInside" id="Ckr-fi-eQ8"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d0I-rP-dfG">
+                                <rect key="frame" x="50" y="319" width="314" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="globe.europe.africa.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="FXC-6E-tXT">
+                                <rect key="frame" x="50" y="144.5" width="314" height="99"/>
+                                <color key="tintColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="eKN-cZ-1JL"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="VZk-mo-7II"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="caC-99-8mO" firstAttribute="leading" secondItem="VZk-mo-7II" secondAttribute="leading" constant="150" id="0DM-vw-f9b"/>
+                            <constraint firstItem="d0I-rP-dfG" firstAttribute="leading" secondItem="VZk-mo-7II" secondAttribute="leading" constant="50" id="0NS-hG-4jP"/>
+                            <constraint firstItem="VZk-mo-7II" firstAttribute="trailing" secondItem="FXC-6E-tXT" secondAttribute="trailing" constant="50" id="2rv-wM-q4x"/>
+                            <constraint firstItem="FXC-6E-tXT" firstAttribute="top" secondItem="VZk-mo-7II" secondAttribute="top" constant="100" id="AQY-wf-5vP"/>
+                            <constraint firstItem="VZk-mo-7II" firstAttribute="trailing" secondItem="d0I-rP-dfG" secondAttribute="trailing" constant="50" id="T9J-rJ-Wjn"/>
+                            <constraint firstItem="FXC-6E-tXT" firstAttribute="leading" secondItem="VZk-mo-7II" secondAttribute="leading" constant="50" id="bhK-xP-ddX"/>
+                            <constraint firstItem="d0I-rP-dfG" firstAttribute="top" secondItem="FXC-6E-tXT" secondAttribute="bottom" constant="75" id="gkc-w7-Jry"/>
+                            <constraint firstItem="VZk-mo-7II" firstAttribute="bottom" secondItem="caC-99-8mO" secondAttribute="bottom" constant="300" id="kvB-Zn-wWw"/>
+                            <constraint firstItem="VZk-mo-7II" firstAttribute="trailing" secondItem="caC-99-8mO" secondAttribute="trailing" constant="150" id="wUu-Ob-9xr"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="sVL-am-A2I"/>
+                    <connections>
+                        <outlet property="infoLabel" destination="d0I-rP-dfG" id="WYC-23-z26"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iby-Fi-VZn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1818.840579710145" y="-94.419642857142847"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="globe.europe.africa.fill" catalog="system" width="128" height="121"/>
+        <image name="goforward" catalog="system" width="121" height="128"/>
+        <image name="paperplane.circle" catalog="system" width="128" height="121"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
