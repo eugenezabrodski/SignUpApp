@@ -10,12 +10,29 @@ import UIKit
 final class SignInViewController: UIViewController {
 
     
+    @IBOutlet weak var constraintStackView: NSLayoutConstraint!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         hideKeyboardWhenTappedAround()
-
+        willStartKeyboard()
+    }
+    
+    
+    private func willStartKeyboard() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc private func keyboardWillShow(notification: Notification) {
+        guard let keyboardSize = (notification.userInfo? [UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
+        constraintStackView.constant -= keyboardSize.height / 2
+    }
+    
+    @objc private func keyboardHide(notification: Notification) {
+        guard let keyboardSize = (notification.userInfo? [UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
+        constraintStackView.constant += keyboardSize.height / 2
     }
     
 

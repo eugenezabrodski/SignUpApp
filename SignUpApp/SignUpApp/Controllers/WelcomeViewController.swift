@@ -19,6 +19,8 @@ class WelcomeViewController: UIViewController {
     }
     
     @IBAction func continueButtonAction(_ sender: Any) {
+        guard let userModel = userModel else { return }
+        UserDefaultService.saveUserModel(userModel: userModel)
         navigationController?.popToRootViewController(animated: true)
     }
     
@@ -26,14 +28,4 @@ class WelcomeViewController: UIViewController {
         infoLabel.text = "\(userModel?.name ?? "User") welcome to our app. Together we are save the world"
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
