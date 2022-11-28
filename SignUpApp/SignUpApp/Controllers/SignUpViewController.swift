@@ -83,6 +83,7 @@ final class SignUpViewController: UIViewController {
         errorConfirmPass.text = "Repeat your password, please"
     }
     
+    
     @IBAction private func signInButton() {
         navigationController?.popToRootViewController(animated: true)
     }
