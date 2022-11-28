@@ -87,7 +87,7 @@ final class SignUpViewController: UIViewController {
         navigationController?.popToRootViewController(animated: true)
     }
     
-    @IBAction private func continueButtonAction() {
+    @IBAction func continueButtonAction() {
         if let email = emailTF.text,
            let pass = passwordTF.text {
             let userModel = UserModel(name: nameTF.text, email: email, pass: pass)

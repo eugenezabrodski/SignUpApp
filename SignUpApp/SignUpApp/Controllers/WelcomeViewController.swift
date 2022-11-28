@@ -7,18 +7,24 @@
 
 import UIKit
 
-class WelcomeViewController: UIViewController {
+final class WelcomeViewController: UIViewController {
 
-    var userModel: UserModel?
+    //MARK: - Properties
     
-    @IBOutlet weak var infoLabel: UILabel!
+   var userModel: UserModel?
+    
+   @IBOutlet private weak var infoLabel: UILabel!
+    
+    //MARK: - Life cicle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
     }
     
-    @IBAction func continueButtonAction(_ sender: Any) {
+    //MARK: - Methods
+    
+    @IBAction private func continueButtonAction(_ sender: Any) {
         guard let userModel = userModel else { return }
         UserDefaultService.saveUserModel(userModel: userModel)
         navigationController?.popToRootViewController(animated: true)

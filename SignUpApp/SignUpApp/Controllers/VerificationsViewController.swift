@@ -7,31 +7,40 @@
 
 import UIKit
 
-class VerificationsViewController: UIViewController {
+final class VerificationsViewController: UIViewController {
+    
+    //MARK: - Properties
     
     var userModel: UserModel?
     
     var randomInt = Int.random(in: 100000 ... 999999)
     
-    @IBOutlet weak var infoLabel: UILabel!
+    @IBOutlet private weak var infoLabel: UILabel!
     
-    @IBOutlet weak var codeTF: UITextField!
+    @IBOutlet private weak var codeTF: UITextField!
     
-    @IBOutlet weak var erorrCode: UILabel!
+    @IBOutlet private weak var erorrCode: UILabel!
     
-    @IBOutlet weak var constraintStackView: NSLayoutConstraint!
+    @IBOutlet private weak var constraintStackView: NSLayoutConstraint!
     
-    @IBOutlet weak var refreshButton: UIButton!
+    @IBOutlet private weak var refreshButton: UIButton!
     
+    //MARK: - Life cicle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         willStartKeyboard()
-
+        addDoneButton(codeTF)
     }
     
-    @IBAction func codeTFAction(_ sender: UITextField) {
+    override func viewWillAppear(_ animated: Bool) {
+        codeTF.text = ""
+    }
+    
+    //MARK: - Methods
+    
+    @IBAction private func codeTFAction(_ sender: UITextField) {
         guard let text = sender.text, !text.isEmpty, text == randomInt.description else { erorrCode.isHidden = false
             erorrCode.text = "Please click Refresh"
             codeTF.isUserInteractionEnabled = false
@@ -41,7 +50,7 @@ class VerificationsViewController: UIViewController {
         performSegue(withIdentifier: "goToWelcomeVC", sender: nil)
     }
     
-    @IBAction func refreshButtonAction(_ sender: UIButton) {
+    @IBAction private func refreshButtonAction(_ sender: UIButton) {
         randomInt = Int.random(in: 100000 ... 900000)
         codeTF.isUserInteractionEnabled = true
         infoLabel.text = "Enter your new secret code '\(randomInt)' from \(userModel?.email ?? "")"
@@ -56,6 +65,7 @@ class VerificationsViewController: UIViewController {
         refreshButton.isHidden = false
     }
     
+    //MARK: - Keyboard
     
     private func willStartKeyboard() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -70,6 +80,27 @@ class VerificationsViewController: UIViewController {
     @objc private func keyboardHide(notification: Notification) {
         guard let keyboardSize = (notification.userInfo? [UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
         constraintStackView.constant += keyboardSize.height / 2
+    }
+    
+    private func addDoneButton(_ textField: UITextField) {
+        let keyboardToolbar = UIToolbar()
+        textField.inputAccessoryView = keyboardToolbar
+        keyboardToolbar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(title: "GO",
+                                         style: .plain,
+                                         target: codeTFAction(_:),
+                                         action: #selector(didTapDone))
+        
+        let flexBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,
+                                            target: nil,
+                                            action: nil)
+        
+        keyboardToolbar.items = [flexBarButton, doneButton]
+    }
+    
+    @objc private func didTapDone() {
+        codeTFAction(codeTF.self)
     }
     
 

@@ -23,6 +23,7 @@
 		AF5E0D0F29251BAE008B0DAC /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF5E0D0E29251BAE008B0DAC /* SignUp.storyboard */; };
 		AF5E0D112926CF7A008B0DAC /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5E0D102926CF7A008B0DAC /* SignInViewController.swift */; };
 		AF5E0D132926CF8E008B0DAC /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5E0D122926CF8E008B0DAC /* SignUpViewController.swift */; };
+		AF6198AC2934FB45002D46AA /* PersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6198AB2934FB45002D46AA /* PersonalViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		AF5E0D0E29251BAE008B0DAC /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		AF5E0D102926CF7A008B0DAC /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		AF5E0D122926CF8E008B0DAC /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		AF6198AB2934FB45002D46AA /* PersonalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 				AF5E0D122926CF8E008B0DAC /* SignUpViewController.swift */,
 				AF41E2A8292E7DFB009F78C4 /* VerificationsViewController.swift */,
 				AF41E2AD292FC6D3009F78C4 /* WelcomeViewController.swift */,
+				AF6198AB2934FB45002D46AA /* PersonalViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 				AF41E2A9292E7DFB009F78C4 /* VerificationsViewController.swift in Sources */,
 				AF5E0CF92924EA08008B0DAC /* SceneDelegate.swift in Sources */,
 				AF5E0D132926CF8E008B0DAC /* SignUpViewController.swift in Sources */,
+				AF6198AC2934FB45002D46AA /* PersonalViewController.swift in Sources */,
 				AF5E0D112926CF7A008B0DAC /* SignInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
